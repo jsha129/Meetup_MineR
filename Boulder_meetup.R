@@ -17,7 +17,7 @@ Sys.setenv(TZ = "America/Denver")
 location <- "country=us&city=boulder&state=co"# in the query format 
 
 setwd(paste0(getwd(),"/upcoming_events"))
-apikey <- "" # Registrer 
+apikey <- "" # Get your API key by registering at https://secure.meetup.com/meetup_api/key/
 output <- paste0(substr(Sys.time(),1,10), "_Boulder")
 startTime <- paste(round(currentTimeMillis.System()),"1w", sep=",") #1week from start or 1m
 thr <- 15 # minimum number of RSVPs in meetups
