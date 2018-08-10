@@ -26,8 +26,9 @@ The script was run almost weekly to collect data from November 2017 to August 20
 ## Which day is better to attend a meetup event in Boulder?
 I empirically noticed that Sundays have lowest number of meetups. Here, I plotted the number of attendees/RSVP versus each day of the week to see how it varies in a week. 
 ![](/best_day.png)
+The RSVP number for meetups on Wednesdays seem to have slightly higher number than the rest.
 
-In addition, I used one-way ANOVA to see if any changes observed are statistically significant. Code snippet below. 
+In addition, I used one-way ANOVA to see if any changes observed are statistically significant, ie *P-value* < 0.05. Code snippet below. 
 ```r
 print("Using One way ANOVA to see if a specific day in a week has more attendees than rest")
 fit <- aov(RSVP ~ WeekDay, df)
@@ -35,7 +36,7 @@ summary(fit)
 stat <- as.data.frame(TukeyHSD(fit)[[1]])
 print(stat[stat$`p adj` < 0.05, ])
 ```
-Outcome
+### Outcome
 ```r
                         diff       lwr       upr        p adj
 Wednesday-Sunday    4.401224  2.279118  6.523329 4.409442e-08
@@ -45,6 +46,13 @@ Wednesday-Thursday  3.973141  2.061353  5.884928 4.246177e-08
 Tuesday-Wednesday  -3.500400 -5.327718 -1.673081 3.800073e-07
 Monday-Wednesday   -3.433965 -5.215838 -1.652093 3.159554e-07
 ```
+
+Each row represents comparision of the RSVP number versus days. The columns 'diff' and 'p adj' represent the difference between two days in number of RSVPs and *P-values* corrected for testing multiple hypotheses. 
+
+The test shows that Wednesdays indeed have higher number of attendees than events falling on Thursdays to fridays. However, the magnitude of effect, ie 'diff', ranges from 3-4 more RSVP numbers which is practically insignificant. In addition, the 'diff' is negative for Wednesday versus Monday and Tuesday, but, again, it is negligible.
+
+In summary, all weekdays have equal number of attendees in Boulder for practical purposes. 
+
 
 
 ## Best meetups
