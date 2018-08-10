@@ -20,9 +20,8 @@ If everything is correct, the script should print out a number corresponding to 
 
 3. Filter and export data. The rest of script is straightforward. It will export two files for each week in [/upcoming_events](/upcoming_events) folder: all events and filtered events. I uploaded the exported files for Boulder as an example. 
 
-4. Analysis of meetups: What are the best meetups to attend in Boulder? 
-
-
+# Analysis of meetups: What are the best meetups to attend in Boulder? 
+The script was run almost weekly to collect data from November 2017 to August 2018. To identify 'best' meetup groups, only groups with highest number of groups (top 25% quan
 
 
 
