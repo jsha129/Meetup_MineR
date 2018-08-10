@@ -48,7 +48,7 @@ Tuesday-Wednesday  -3.500400 -5.327718 -1.673081 3.800073e-07
 Monday-Wednesday   -3.433965 -5.215838 -1.652093 3.159554e-07
 ```
 
-Each row represents comparision of the RSVP number versus days. The columns 'diff' and 'p adj' represent the difference between two days in number of RSVPs and *P-values* corrected for testing multiple hypotheses. 
+Each row represents comparision of the RSVP number versus days. The columns 'diff' and 'p adj' represent the difference between two days in number of RSVPs and *P-values* corrected for testing multiple hypotheses, respectively. 
 
 The test shows that Wednesdays indeed have higher number of attendees than events falling on Thursdays to fridays. However, the magnitude of effect, ie 'diff', ranges from 3-4 more RSVP numbers which is practically insignificant. In addition, the 'diff' is negative for Wednesday versus Monday and Tuesday, but, again, it is negligible.
 
