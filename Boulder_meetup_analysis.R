@@ -53,6 +53,13 @@ boxplot(RSVP ~ WeekDay, df, horizontal = T, las = 2, col ="grey80",
         xlab ="Number of attendees")
 dev.off()
 
+### Anova to test which day is better.
+print("Using One way ANOVA to see if a specific day in a week has more attendees than rest")
+fit <- aov(RSVP ~ WeekDay, df)
+summary(fit)
+stat <- as.data.frame(TukeyHSD(fit)[[1]])
+print(stat[stat$`p adj` < 0.05, ])
+
 ## which meetup group has high events and RSVPs
 unique.groups <- as.data.frame(t(table(df$GroupName)))[,2:3]
 colnames(unique.groups) <- c("GroupName", "Total_Events")
