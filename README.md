@@ -21,7 +21,34 @@ If everything is correct, the script should print out a number corresponding to 
 3. Filter and export data. The rest of script is straightforward. It will export two files for each week in [/upcoming_events](/upcoming_events) folder: all events and filtered events. I uploaded the exported files for Boulder as an example. 
 
 # Analysis of meetups: What are the best meetups to attend in Boulder? 
-The script was run almost weekly to collect data from November 2017 to August 2018. Meetup groups with highest number of events and attendees (top 25% for both criteria) were deemed as the 'best' ([Boulder_meetup_analysis.R](/Boulder_meetup_analysis.R)).
+The script was run almost weekly to collect data from November 2017 to August 2018; however, there are some weeks where the data was not collected.
+
+## Which day is better to attend a meetup event in Boulder?
+I empirically noticed that Sundays have lowest number of meetups. Here, I plotted the number of attendees/RSVP versus each day of the week to see how it varies in a week. 
+!(/best_day.png)
+
+In addition, I used one-way ANOVA to see if any changes observed are statistically significant. Code snippet below. 
+```r
+print("Using One way ANOVA to see if a specific day in a week has more attendees than rest")
+fit <- aov(RSVP ~ WeekDay, df)
+summary(fit)
+stat <- as.data.frame(TukeyHSD(fit)[[1]])
+print(stat[stat$`p adj` < 0.05, ])
+```
+Outcome
+```r
+                        diff       lwr       upr        p adj
+Wednesday-Sunday    4.401224  2.279118  6.523329 4.409442e-08
+Wednesday-Saturday  3.759404  1.920911  5.597897 5.936262e-08
+Wednesday-Friday    4.357021  2.209332  6.504711 7.185972e-08
+Wednesday-Thursday  3.973141  2.061353  5.884928 4.246177e-08
+Tuesday-Wednesday  -3.500400 -5.327718 -1.673081 3.800073e-07
+Monday-Wednesday   -3.433965 -5.215838 -1.652093 3.159554e-07
+```
+
+
+## Best meetups
+Meetup groups with highest number of events and attendees (top 25% for both criteria) were deemed as the 'best' ([Boulder_meetup_analysis.R](/Boulder_meetup_analysis.R)).
 ![](/best_meetups.png)
 
 
