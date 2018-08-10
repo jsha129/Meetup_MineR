@@ -61,9 +61,10 @@ Meetup groups with highest number of events and attendees (top 25% for both crit
 
 In the figure below, the height of the bar represents median RSVPs for a group, and the number of events from the group is displayed next to the bar. The colour of the graph also responds to number of events. 
 
-'Boulder Python' meetup has the highest number of RSVPs but has fewer events whereas 'Boulder Collective Soccer' has around 10 RSVPs for events but a lot of events. The choice of what meetups to attend is personal. In the case of Boulder Collective Soccer, having 10 people may be good enough to form teams for games and so on. However, the script rapidly identifies suitable meetup groups that interests an individual. I have attended 'Boulder 20s and 30s social' (median RSVP: ~25 and 20 events in the time perios) and it was fantastic. 
 
 ![](/best_meetups.png)
+
+'Boulder Python' meetup has the highest number of RSVPs but has fewer events whereas 'Boulder Collective Soccer' has around 10 RSVPs for events but a lot of events. The choice of what meetups to attend is personal. In the case of Boulder Collective Soccer, having 10 people may be good enough to form teams for games and so on. However, the script rapidly identifies suitable meetup groups that interests an individual. I  attended several events from the 'Boulder 20s and 30s social' meetup (median RSVP: ~25 and 20 events in the time period) and it was fantastic. 
 
 
 
