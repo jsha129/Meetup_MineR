@@ -25,7 +25,7 @@ The script was run almost weekly to collect data from November 2017 to August 20
 
 ## Which day is better to attend a meetup event in Boulder?
 I empirically noticed that Sundays have lowest number of meetups. Here, I plotted the number of attendees/RSVP versus each day of the week to see how it varies in a week. 
-!(/best_day.png)
+![](/best_day.png)
 
 In addition, I used one-way ANOVA to see if any changes observed are statistically significant. Code snippet below. 
 ```r
