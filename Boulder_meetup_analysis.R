@@ -14,8 +14,8 @@ Sys.setenv(TZ = "America/Denver")
 msToDate <- function(tempTime){
   timeFormat <- "MST"
   temp <- strptime(as.POSIXct(tempTime/1000,
-                             origin ="1970-01-01"),
-                  format="%Y-%m-%d",tz = timeFormat)
+                              origin ="1970-01-01"),
+                   format="%Y-%m-%d",tz = timeFormat)
   return(as.character(temp))
 }
 
@@ -45,11 +45,11 @@ weekDays <- sapply(0:6, function(i){return(weekDays[7-i])})
 df[,"WeekDay"] <- weekdays(as.Date(df$Date))
 df$WeekDay <- factor(df$WeekDay, 
                      levels = weekDays)
-png("best_day.png")
+png("best_day.png", width = 5, height = 4, units = "in", res = 150)
 par(mar = c(4,6,3,1))
 boxplot(RSVP ~ WeekDay, df, horizontal = T, las = 2, col ="grey80",
         main = "Which day has meetups with most attendees?",
-        cex.main = 1.2,
+        cex.main = 1,
         xlab ="Number of attendees")
 dev.off()
 
@@ -67,6 +67,7 @@ df2.subset <- subset(df2, Total_Events >= quantile(df2$Total_Events, 0.75, na.rm
 
 
 df2.subset <- df2.subset[order(df2.subset$Median_RSVPs, decreasing = F),]
+png("best_meetups.png", width = 8, height = 10, units = "in", res = 150)
 par(mar = c(4,20,1,1))
 p <- barplot(df2.subset$Median_RSVPs, horiz = T,
              xlim = c(0,max(df2.subset$Median_RSVPs)+10),
@@ -76,4 +77,5 @@ p <- barplot(df2.subset$Median_RSVPs, horiz = T,
 axis(2, at = p, labels = NA)
 text(y = p, x =  df2.subset$Median_RSVPs + 2, 
      labels = df2.subset$Total_Events)
+dev.off()
 
