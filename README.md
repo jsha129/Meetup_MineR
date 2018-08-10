@@ -22,6 +22,7 @@ If everything is correct, the script should print out a number corresponding to 
 
 # Analysis of meetups: What are the best meetups to attend in Boulder? 
 The script was run almost weekly to collect data from November 2017 to August 2018. Meetup groups with highest number of events and attendees (top 25% for both criteria) were deemed as the 'best' ([]()).
+![](/best_meetups.png)
 
 
 
