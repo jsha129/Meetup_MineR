@@ -26,6 +26,7 @@ The script was run almost weekly to collect data from November 2017 to August 20
 ## Which day is better to attend a meetup event in Boulder?
 I empirically noticed that Sundays have lowest number of meetups. Here, I plotted the number of attendees/RSVP versus each day of the week to see how it varies in a week. 
 ![](/best_day.png)
+
 The RSVP number for meetups on Wednesdays seem to have slightly higher number than the rest.
 
 In addition, I used one-way ANOVA to see if any changes observed are statistically significant, ie *P-value* < 0.05. Code snippet below. 
@@ -56,8 +57,15 @@ In summary, all weekdays have equal number of attendees in Boulder for practical
 
 
 ## Best meetups
-Meetup groups with highest number of events and attendees (top 25% for both criteria) were deemed as the 'best' ([Boulder_meetup_analysis.R](/Boulder_meetup_analysis.R)).
+Meetup groups with highest number of events and attendees (top 25% for both criteria) were deemed as the 'best'  in this example, although the definition is rather subjective ([Boulder_meetup_analysis.R](/Boulder_meetup_analysis.R)).
+
+In the figure below, the height of the bar represents median RSVPs for a group, and the number of events from the group is displayed next to the bar. 
+
+'Boulder Python' meetup has the highest number of RSVPs but has fewer events whereas 'Boulder Collective Soccer' has around 10 RSVPs for events but a lot of events. The choice of what meetups to attend is personal. In the case of Boulder Collective Soccer, having 10 people may be good enough to form teams for games and so on. However, the script rapidly identifies suitable meetup groups that interests an individual. I have attended 'Boulder 20s and 30s social' (median RSVP: ~25 and 20 events in the time perios) and it was fantastic. 
+
 ![](/best_meetups.png)
+
+
 
 
 
